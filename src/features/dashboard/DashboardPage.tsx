@@ -9,12 +9,34 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Box, Card, CardContent, Chip, Divider, Grid, List, ListItem, ListItemText, Stack, Typography } from '@mui/material';
-import { Bolt, ElectricBolt, ErrorOutline, LightMode } from '@mui/icons-material';
+import {
+  Box,
+  Card,
+  CardContent,
+  Chip,
+  Divider,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Stack,
+  Typography,
+} from '@mui/material';
+import {
+  Bolt,
+  ElectricBolt,
+  ErrorOutline,
+  LightMode,
+} from '@mui/icons-material';
 import { PageHeader } from '../../components/ui/PageHeader';
 import { StatCard } from '../../components/ui/StatCard';
 import { ChartCard } from '../../components/ui/ChartCard';
-import { dashboardStats, energyByDay, powerToday, recentAlerts } from './dashboard.mock';
+import {
+  dashboardStats,
+  energyByDay,
+  powerToday,
+  recentAlerts,
+} from './dashboard.mock';
 import { formatNumber } from '../../lib/utils/format';
 
 export const DashboardPage = () => {
@@ -45,7 +67,12 @@ export const DashboardPage = () => {
                 <XAxis dataKey="time" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="power" stroke="#00607a" fill="#c2e8f0" />
+                <Area
+                  type="monotone"
+                  dataKey="power"
+                  stroke="#00607a"
+                  fill="#c2e8f0"
+                />
               </AreaChart>
             </ResponsiveContainer>
           </ChartCard>
@@ -69,7 +96,12 @@ export const DashboardPage = () => {
         <Grid item xs={12} md={6}>
           <Card>
             <CardContent>
-              <Stack direction="row" alignItems="center" justifyContent="space-between" mb={2}>
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="space-between"
+                mb={2}
+              >
                 <Typography variant="h6">Recent Alerts</Typography>
                 <Chip label="Last 24h" size="small" color="warning" />
               </Stack>
@@ -80,13 +112,30 @@ export const DashboardPage = () => {
                       <ListItemText
                         primary={alert.message}
                         secondary={
-                          <Stack direction="row" spacing={1} alignItems="center" divider={<Divider orientation="vertical" flexItem />}>
-                            <Typography variant="caption" color="text.secondary">
+                          <Stack
+                            direction="row"
+                            spacing={1}
+                            alignItems="center"
+                            divider={
+                              <Divider orientation="vertical" flexItem />
+                            }
+                          >
+                            <Typography
+                              variant="caption"
+                              color="text.secondary"
+                            >
                               {alert.time}
                             </Typography>
-                            <Chip label={alert.severity} size="small" color={alert.severity === 'High' ? 'error' : 'warning'} />
+                            <Chip
+                              label={alert.severity}
+                              size="small"
+                              color={
+                                alert.severity === 'High' ? 'error' : 'warning'
+                              }
+                            />
                           </Stack>
                         }
+                        secondaryTypographyProps={{ component: 'div' }}
                       />
                     </ListItem>
                     <Divider />
@@ -104,7 +153,8 @@ export const DashboardPage = () => {
                 <Box>
                   <Typography variant="h6">Performance snapshot</Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Ideal conditions ahead with mild temperatures and clear skies.
+                    Ideal conditions ahead with mild temperatures and clear
+                    skies.
                   </Typography>
                 </Box>
               </Stack>
@@ -151,7 +201,9 @@ export const DashboardPage = () => {
                 </Stack>
                 <Stack direction="row" spacing={1} alignItems="center">
                   <ErrorOutline color="warning" />
-                  <Typography variant="body2">Low priority maintenance</Typography>
+                  <Typography variant="body2">
+                    Low priority maintenance
+                  </Typography>
                 </Stack>
               </Stack>
             </CardContent>
