@@ -19,8 +19,6 @@ import {
   Bolt,
   Warning,
   Settings,
-  Assessment,
-  BuildCircle,
   ChevronLeft,
   ChevronRight,
 } from '@mui/icons-material';
@@ -42,8 +40,6 @@ const navItems: NavItem[] = [
   { label: 'Parks', path: '/parks', icon: <SolarPower /> },
   { label: 'Inverters', path: '/inverters', icon: <Bolt /> },
   { label: 'Alerts', path: '/alerts', icon: <Warning /> },
-  { label: 'Maintenance', path: '/maintenance', icon: <BuildCircle /> },
-  { label: 'Reports', path: '/reports', icon: <Assessment /> },
   { label: 'Settings', path: '/settings', icon: <Settings />, roles: ['Admin', 'Manager'] },
 ];
 

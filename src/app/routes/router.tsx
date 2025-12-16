@@ -8,8 +8,6 @@ import { ParkDetailsPage } from '../../features/parks/ParkDetailsPage';
 import { InvertersPage } from '../../features/inverters/InvertersPage';
 import { AlertsPage } from '../../features/alerts/AlertsPage';
 import { SettingsPage } from '../../features/settings/SettingsPage';
-import { ReportsPage } from '../../features/reports/ReportsPage';
-import { MaintenancePage } from '../../features/maintenance/MaintenancePage';
 import { RequireAuth } from '../../features/auth/RequireAuth';
 import { RequireRole } from '../../features/auth/RequireRole';
 import { NotFoundPage } from './NotFoundPage';
@@ -30,8 +28,6 @@ export const AppRoutes = () => (
           <Route path="/parks/:parkId" element={<ParkDetailsPage />} />
           <Route path="/inverters" element={<InvertersPage />} />
           <Route path="/alerts" element={<AlertsPage />} />
-          <Route path="/maintenance" element={<MaintenancePage />} />
-          <Route path="/reports" element={<ReportsPage />} />
           <Route element={<RequireRole roles={['Admin', 'Manager']} />}>
             <Route path="/settings" element={<SettingsPage />} />
           </Route>

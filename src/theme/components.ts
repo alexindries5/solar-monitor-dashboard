@@ -12,7 +12,7 @@ export const components = (theme: Theme): Components => ({
         fontWeight: 600,
       },
       contained: {
-        boxShadow: '0px 10px 30px rgba(15, 110, 156, 0.22)',
+        boxShadow: '0px 10px 30px rgba(0, 96, 122, 0.18)',
       },
     },
   },

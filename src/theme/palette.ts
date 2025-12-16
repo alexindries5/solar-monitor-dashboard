@@ -5,37 +5,32 @@ export const getPalette = (mode: PaletteMode): PaletteOptions => {
   return {
     mode,
     primary: {
-      main: '#0f6e9c',
-      light: '#4fa3ca',
-      dark: '#0a4d72',
-      contrastText: '#f7fbff',
+      main: '#00607a',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#845ef7',
-      light: '#b197fc',
-      dark: '#5f3dc4',
-      contrastText: '#f7f5ff',
+      main: '#00a7c4',
     },
     background: {
-      default: isLight ? '#f5f7fb' : '#0b1021',
-      paper: isLight ? '#ffffff' : '#0f172a',
+      default: isLight ? '#f4f6f8' : '#0b141a',
+      paper: isLight ? '#ffffff' : '#101921',
     },
     text: {
-      primary: isLight ? '#0f172a' : '#e2e8f0',
-      secondary: isLight ? '#475467' : '#cbd5e1',
+      primary: isLight ? '#0b1b2b' : '#e3e8ef',
+      secondary: isLight ? '#52616b' : '#a8b3c1',
     },
-    divider: isLight ? 'rgba(16, 24, 40, 0.12)' : 'rgba(255,255,255,0.08)',
+    divider: isLight ? 'rgba(2, 42, 68, 0.1)' : 'rgba(255,255,255,0.12)',
     success: {
-      main: '#22c55e',
+      main: '#20c997',
     },
     warning: {
-      main: '#f4a30d',
+      main: '#ffb020',
     },
     error: {
-      main: '#ef4444',
+      main: '#f04438',
     },
     info: {
-      main: '#00b2ff',
+      main: '#2d8eff',
     },
   };
 };
