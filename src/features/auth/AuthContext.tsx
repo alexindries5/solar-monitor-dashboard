@@ -1,9 +1,22 @@
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import jwtDecode from 'jwt-decode';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { jwtDecode } from 'jwt-decode';
 import type { AuthState, Role } from './auth.types';
 import type { LoginResponse } from './auth.api';
 import { login as apiLogin } from './auth.api';
-import { clearAuthStorage, getStoredToken, getStoredUser, setStoredToken, setStoredUser } from '../../lib/auth/token';
+import {
+  clearAuthStorage,
+  getStoredToken,
+  getStoredUser,
+  setStoredToken,
+  setStoredUser,
+} from '../../lib/auth/token';
 import { setUnauthorizedHandler } from '../../lib/api/axios';
 
 const initialState: AuthState = {
@@ -113,7 +126,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       state,
       login,
       logout,
-      hasRole: (roles: Role[]) => !!state.user && roles.includes(state.user.role),
+      hasRole: (roles: Role[]) =>
+        !!state.user && roles.includes(state.user.role),
       isAuthenticated: Boolean(state.accessToken),
     }),
     [state],

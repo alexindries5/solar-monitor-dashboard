@@ -40,7 +40,12 @@ const navItems: NavItem[] = [
   { label: 'Parks', path: '/parks', icon: <SolarPower /> },
   { label: 'Inverters', path: '/inverters', icon: <Bolt /> },
   { label: 'Alerts', path: '/alerts', icon: <Warning /> },
-  { label: 'Settings', path: '/settings', icon: <Settings />, roles: ['Admin', 'Manager'] },
+  {
+    label: 'Settings',
+    path: '/settings',
+    icon: <Settings />,
+    roles: ['Admin', 'Manager'],
+  },
 ];
 
 export const Sidebar = () => {
@@ -48,7 +53,8 @@ export const Sidebar = () => {
   const { state } = useAuth();
 
   const renderItem = (item: NavItem) => {
-    if (item.roles && (!state.user || !item.roles.includes(state.user.role))) return null;
+    if (item.roles && (!state.user || !item.roles.includes(state.user.role)))
+      return null;
     return (
       <ListItem key={item.path} disablePadding sx={{ mb: 0.5 }}>
         <ListItemButton
@@ -78,14 +84,22 @@ export const Sidebar = () => {
       sx={{
         width: collapsed ? 80 : drawerWidth,
         flexShrink: 0,
+        zIndex: (theme) => theme.zIndex.drawer,
         '& .MuiDrawer-paper': {
           width: collapsed ? 80 : drawerWidth,
           boxSizing: 'border-box',
           p: 1,
+          zIndex: (theme) => theme.zIndex.drawer,
         },
       }}
     >
-      <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: collapsed ? 'center' : 'space-between' }}>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: collapsed ? 'center' : 'space-between',
+        }}
+      >
         {!collapsed && (
           <Stack spacing={0.2}>
             <Typography variant="h6">Solar Monitor</Typography>
